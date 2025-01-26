@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.page-link {
+	border-color: #ffffff !important;
+}
+
+.my-bg-1 {
+	background-color : rgb(14, 161, 139);
+}
+
+.my-bg-2 {
+	background-color : rgba(242, 167, 84, 0.5) !important;
+}
+
+.my-btn-bg-1 {
+	background-color : rgb(216, 154, 86);
+}
+
+.input-group-sm>.btn, .input-group-sm>.form-control, .input-group-sm>.form-select, .input-group-sm>.input-group-text {
+	font-size: 1rem !important;
+}
+
+body {
+	font-family: 'Ownglyph_ParkDaHyun';
+	font-size:15pt;
+	
+	background-color : rgb(225, 218, 211);
+}
+
+table { font-size:15pt; text-align:center; vertical-align:middle !important; }
+table a:link { color:rgb(14, 161, 139); }
+a:link {
+	text-decoration: none;
+	color: #443733;
+	}
+
+.mymargin5 { margin:5px 0px 5px 0px; }
+
+.mycolor1 { background-color:rgb(14, 161, 139) !important; color:white !important; }
+.mycolor2 { background-color: lightsteelblue !important; }
+.mycolor3 { background-color: lightyellow !important; }
+
+.mythumb_box {
+	font-size : 14px;
+	text-align:center;
+	border: 1px solid lightgray;
+	padding:3px;
+	margin:5px 0px 5px 0px;
+}
+
+.mythumb_image {
+	height: 150px;
+	max-width: 100%;
+	margin-bottom:3px
+}
+
+.mythumb_text {
+	border: 1px solid lightgray;
+	background-color:rgba(14, 161, 139, 0.5);
+	padding:3px;
+}
+
+.mythumb_bigimage {
+	height: 550px;
+	max-width: 100%;
+	margin-bottom:3px
+}
+
+.mynopic { background-color:#eeeeee; width:98%; height:140px; border:1px solid #cccccc; border-radius:5px; margin:3px }
+

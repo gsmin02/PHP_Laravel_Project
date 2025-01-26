@@ -1,0 +1,133 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Member;
+
+class LoginController extends Controller
+{
+	public function check()
+	{
+		$uid = request('uid');
+		$pwd = request('pwd');
+		
+		$row = Member::where('uid', '=', $uid)->
+			where('pwd', '=', $pwd)->first();
+			
+		if($row)
+		{
+			session()->put('uid',$row->uid);
+			session()->put('rank',$row->rank);
+		}
+		
+		return view('main');
+	}
+	
+	public function logout()
+	{
+		session()->forget('uid');
+		session()->forget('rank');
+		
+		return view('main');
+	}
+	
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+		//
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+		//
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+		//
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+		//
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+		//
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+		//
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+	
+	public function getlist($text1, $text2)
+	{
+		//
+	}
+	
+	public function getlist_product()
+	{
+		//
+	}
+	
+	public function save_row(Request $request, $row)
+	{
+		//
+		
+	}
+	
+	public function qstring()
+	{
+		//
+	}
+	
+}

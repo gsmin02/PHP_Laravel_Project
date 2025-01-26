@@ -1,0 +1,459 @@
+body {
+    font-family: "ITCNewBaskervilleRoman", Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+video {
+	width: 100%;
+	max-width: 1430px;
+	height: auto;
+}
+
+.pdd-top {
+	padding-top: 60px;
+}
+
+.input_search_control {
+	padding: 4px 10px;
+	font-size: 16px;
+	border: 0;
+	border-bottom: 2px solid #666;
+	border-radius: 4px;
+	outline: none;
+}
+
+.search-button {
+	border: 0;
+}
+
+.icon_layout {
+	text-align: right;
+	position: relative;
+	z-index:1001;
+}
+
+.layout-item-list {
+	font-family: "NeueHelvetica55Roman", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.inspiration-text-box {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.inspiration-text-en {
+	font-family: "ITCNewBaskervilleRoman", Georgia, serif;
+	color: #333;
+	text-align: center;
+}
+
+.list-text-align {
+	color: #666;
+	margin-top: 20px;
+	max-width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	line-height: 1.6;
+}
+
+.text-font-en {
+	font-family: "ITCNewBaskervilleRoman", Georgia, serif;
+	color: #333;
+}
+
+.inspiration-text-kr {
+	font-family: "Noto Serif KR", sans-serif;
+	color: #333;
+	text-align: center;
+}
+
+.scroll-indicator {
+    position: absolute;
+    left: 50%; /* 가로 중앙 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+}
+
+.arrow {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-left: 3px solid #000; /* 화살표 왼쪽 선 */
+    border-bottom: 3px solid #000; /* 화살표 아래 선 */
+    transform: rotate(-45deg); /* 꺽쇠 모양으로 회전 */
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.container {
+	position: relative;
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main.container {
+	padding-top: 140px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    z-index: 999;
+    padding-top: 20px;
+    text-align: center;
+    transition: padding 0.5s ease, background-color 0.5s ease; /* 패딩과 배경색 변화에 대해 부드러운 전환 추가 */
+}
+
+header.compact {
+    padding-top: 10px 0; /* 축소된 상태의 패딩 */
+}
+
+header.compact h1,
+header.compact nav {
+    display: none; /* 축소 시 숨김 */
+}
+
+.compact-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* 높이 설정 */
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 선 사이 간격 유지 */
+    height: 10px; /* 햄버거 메뉴 높이 */
+    width: 30px; /* 햄버거 메뉴 너비 */
+}
+
+.hamburger-menu span {
+    display: block; /* 각 선을 블록으로 표시 */
+    width: 100%; /* 너비를 부모에 맞춤 */
+    height: 2px; /* 선 두께 */
+    background-color: #0a0a0a; /* 선 색상 */
+}
+
+header.compact .container {
+    display: none; /* 축소 시 컨테이너 숨김 */
+}
+
+header.compact .compact-header {
+    display: flex; /* 축소 시 컴팩트 헤더 표시 */
+}
+
+header:not(.compact) .compact-header {
+    display: none; /* 기본 상태에서는 숨김 */
+}
+
+.compact-header h2,
+.compact-header h3 {
+    margin: 0; /* 마진 제거 */
+    line-height: 1.2; /* 줄 높이 설정 */
+}
+
+.compact-header h2 {
+    font-size: 1.2em; /* 제목 크기 설정 */
+}
+
+.compact-header h3 {
+    font-size: 1em; /* 서브 제목 크기 설정 */
+}
+
+nav ul {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: center; /* 중앙 정렬 */
+}
+
+nav ul li {
+    margin: 0 15px; /* 리스트 아이템 간격 설정 */
+}
+
+nav ul li a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 링크 색상 설정 */
+    font-weight: bold; /* 굵은 글씨 설정 */
+    text-transform: uppercase; /* 대문자 변환 */
+}
+
+.inspiration-grid {
+	padding: 20px 0;
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr); /* 두 개의 열로 그리드 설정 */
+	gap: 50px; 
+
+}
+
+.inspiration-item {
+   position: relative; 
+   overflow: hidden; /* 자식 요소가 부모 영역을 넘지 않도록 설정 */
+   transition: transform 0.3s ease; /* 전체 div에 대한 전환 효과 */
+}
+
+.item-container {
+   display: flex;
+   flex-direction: column; /* 이미지와 설명글을 세로로 나열 */
+   align-items: center; /* 중앙 정렬 */
+}
+
+.inspiration-item:hover {
+   transform: scale(1.05); /* 마우스 오버 시 전체 div 확대 */
+}
+
+.inspiration-item img {
+   width: 100%; 
+   height: auto; 
+   display: block; 
+}
+
+.inspiration-caption {
+	position:absolute;
+	bottom :0;
+	left :0;
+	right :0;
+	background :rgba(245,245,245,0.8);
+	padding :10px ;
+	text-align :center ;
+}
+
+.inspiration-caption h2 {
+	color: #333;
+}
+.inspiration-caption p {
+	font-size: 1.5em;
+}
+
+.list-menu {
+	display: none;
+}
+
+.list-grid {
+	padding: 40px 0;
+	display: grid; 
+	grid-template-columns: repeat(3, 1fr); /* 세 개의 열로 그리드 설정 */
+	gap: 50px;
+}
+
+.list-item {
+   position: relative; 
+   overflow: hidden; /* 자식 요소가 부모 영역을 넘지 않도록 설정 */
+   transition: transform 0.3s ease; /* 전체 div에 대한 전환 효과 */
+}
+
+.list-item:hover {
+   transform: scale(1.05); /* 마우스 오버 시 전체 div 확대 */
+}
+
+.list-item img {
+   width: 100%; 
+   height: auto; 
+   display: block; 
+}
+
+.list-caption {
+   position:absolute;
+   bottom :0;
+   left :0;
+   right :0;
+   background :rgba(245,245,245,0.8);
+   padding :10px ;
+   text-align :center ;
+   color :#333;
+   
+}
+
+.list-caption h3 {
+	font-size : 20px;
+}
+
+.list-caption p {
+	font-size : 1.1em;
+}
+
+.list-banner {
+	max-width: 1430px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.list-banner-item img {
+	display: block;
+	max-height: 715px;
+}
+
+.detail-menu {
+	display: none;
+}
+
+.detail-grid {
+	margin-top: 20px;
+	display: grid; 
+	grid-template-columns :repeat(2, 1fr); /* 두 개의 열로 그리드 설정 */
+	background :rgba(236,236,236,1);
+}
+
+.detail-item {
+	position: relative; 
+	flex-direction: column;
+}
+
+.detail-item img {
+   width: 100%; 
+   height: auto; 
+   display: block; 
+}
+
+.detail-caption {
+	max-width: 450px;
+	margin: 0 auto;
+	text-align: center;
+	align-content: center;
+	height: 100%;
+}
+
+.detail-caption h3 {
+	margin-top: 40px;
+	margin-bottom: 15px;
+	font-size: 35px;
+}
+
+.detail-caption p {
+	margin-top: 30px;
+	font-size: 13px;
+	line-height: 23px;
+	letter-spacing: 0px;
+}
+
+.detail-button {
+	margin-top: 30px;
+	position: relative;
+	display: inline-block;
+	border: 1px solid #55bbba;
+	padding: 10px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1.1px;
+	text-decoration: none;
+	color : #000;
+}
+
+.detail-show-price {
+	margin-top: 20px;
+	color : #333;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+.link-main {
+	color : #333;
+}
+
+footer {
+   background-color :#f5f5f5 ;
+   text-align :center ;
+   padding :20px 0 ;
+   margin-top :40px ;
+}
+
+/* 햄버거 메뉴 버튼 스타일 (모바일 전용) */
+.menu-toggle {
+   display :none ;
+   position :fixed ;
+   top :20px ;
+   left :20px ;
+   z-index :1000 ;
+   background :none ;
+   border :none ;
+   font-size :30px ;
+   cursor:pointer ;
+}
+
+/* 모바일 화면에서의 스타일 조정 */
+@media (max-width :768px) {
+	
+	main.container {
+		padding-top: 140px;
+	}
+	
+	header.compact { 
+		padding-top :10px; 
+	}
+
+	header.compact h1,
+	header.compact nav { 
+		display :block ; 
+	}
+
+	header.compact .compact-header { 
+		display:none ; 
+	}
+
+	.menu-toggle { 
+		display:block ; 
+		z-index :1000 ; 
+	}
+
+	nav { 
+		position :fixed ; 
+		top :0 ; 
+		left :-250px ; 
+		width :250px ; 
+		height :100% ; 
+		background-color:#fff ; 
+		box-shadow :2px 0 5px rgba(0,0,0,0.1) ; 
+		transition:left .3s ease ; 
+	}
+
+	nav.active { 
+		left :0 ; 
+	}
+
+	nav ul { 
+		flex-direction :column ; 
+		padding-top :60px ; 
+	}
+
+	nav ul li { 
+		margin :10px 0 ; 
+	}
+
+	.inspiration-grid,
+    .list-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+	
+	.icon_layout {
+		top: 20px;
+		right: 20px;
+		z-index:1001;
+		margin-bottom: 20px;
+	}
+	
+	.detail-caption {
+		padding-top : 20px;
+	}
+}
